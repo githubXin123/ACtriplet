@@ -1,0 +1,48 @@
+batch_size: 256                         # batch size
+protein_file: cm219_protbert_mean.csv   # path to protein features
+
+pretrain_path: none                     # path to pre-trained model
+num_model: model_1.pth                  # name of pre-trained model
+eval_every_n_epochs: 1                  # validation frequency
+save_every_n_epochs: 1                  # automatic model saving frequecy
+log_every_n_steps: 100                  # print training log frequency
+
+
+margin_AC: 2
+margin_bio: 2
+init_lr: 0.0002                          # initial learning rate for Adam
+lr_min: 0.00000001                       # mini learning rate
+bio_lr: 0.00002
+biognn_lr: 0.0002
+num_biopretrain: 2
+num_ACpretrain: 6
+
+
+weight_decay: 1e-4                      # weight decay for Adam
+gpu: cuda:0                             # training GPU
+
+epochs: 200                             # total number of epochs
+T_max: 195                              # maximum temperature
+warmup: 5
+max_epochs_without_improvement: 15
+
+
+model:
+  node_dim: 52                          # dimension of node features
+  edge_dim: 10                          # dimension of edge features
+  conv_dim: 256                         # dimension of hidden layers in GNN
+  graph_dim: 256                        # dimension of graph features
+  protein_outdim: 256                   # dimension of protein features
+  num_layer: 5                          # number of GNN layers
+  gnn_operator: gin
+  pool: add
+  dropout: 0
+  protein_dim: 1024
+  prot_layer: 5                         # number of protein layers
+
+
+bio_path: /home/xxx/SCL_AC/data_pre/collection-1/cm219_AC_0918.parquet
+dataset_AC:
+  num_workers: 8                        # dataloader number of workers
+  valid_size: 0.1                       # ratio of validation data
+  data_path: /home/xxx/SCL_AC/data_pre/collection-1/cm219_AC_0918.parquet

@@ -1,0 +1,32 @@
+prot_path: cm1871_protbert_full.csv     # protein feature path
+protein_dim: 1024
+dataset_name: CHEMBL1871_Ki             # dataset_name
+pretrain_path: Oct18_18-29-52           # path to pretrain model
+num_model: model_174.pth
+
+batchsize_train: 32
+batchsize_valid: 32
+batchsize_test: 128
+
+epochs: 300
+gpu: cuda:0
+num_workers: 12
+
+conv_dim: 256
+graph_dim: 256
+prot_trans_layer: 5
+DMA_depth: 2
+
+
+mini_epoch: 100
+init_lr: 0.0001
+init_base_lr: 0.00005
+lr_prot: 0.00001
+
+weight_decay: 1e-4
+pred_n_layer: 3
+early_stopping_patience: 10
+pred_act: Elu                           # Relu、Elu、PRelu、LeakRelu、Softplus
+dropout: 0
+pool: add
+num_conv: 5
