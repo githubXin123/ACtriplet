@@ -4,7 +4,7 @@ ACtriplet: an improved deep learning model for activity cliffs prediction by int
 ## Requirements
   * python = 3.8
   * pytorch = 2.0
-  * torch ge ometric
+  * torch geometric
   * rdkit
   * numpy
   * pandas
