@@ -15,7 +15,7 @@ ACtriplet: an improved deep learning model for activity cliffs prediction by int
 ## Pre-train
 ### Step 1: Prepare dataset
 Extract Ac and non-Ac from the 30 macromolecular targets dataset  
-`data pre/get collection-1.py`
+`data pre/get_collection.ipynb`
 ### Step 2: Pre-train
 `python pretrain/main pretrain.py`
 
