@@ -143,7 +143,7 @@ class ftDataset(Dataset):
         try:
             x1, mol_edge_index1, mol_edge_attr1 = get_feature(smile)
         except:
-            print('报错的分子：', index)
+            print('error：', index)
 
 
         real_label = torch.tensor(self.real_label[index], dtype=torch.float).view(1,-1)
